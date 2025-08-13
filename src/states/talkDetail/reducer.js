@@ -5,7 +5,7 @@
 
 import { ActionType } from './action';
 
-function talsDetailReducer(talkDetail = null, action = {}) {
+function talkDetailReducer(talkDetail = null, action = {}) {
   switch (action.type) {
     case ActionType.RECEIVE_TALK_DETAIL:
       return action.payload.talkDetail;
@@ -26,4 +26,4 @@ function talsDetailReducer(talkDetail = null, action = {}) {
   }
 }
 
-export default talsDetailReducer;
+export default talkDetailReducer;
