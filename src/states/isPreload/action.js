@@ -1,5 +1,5 @@
 /**
- * @TODO: Define all the actions (creator) for the isPreLoad state
+ * @TODO: Define all the actions (creator) for the isPreload state
  */
 
 import api from '../../utils/api';
@@ -9,11 +9,11 @@ const ActionType = {
   SET_IS_PRELOAD: 'SET_IS_PRELOAD',
 };
 
-function setIsPreloadActionCreator(isPreLoad) {
+function setIsPreloadActionCreator(isPreload) {
   return {
     type: ActionType.SET_IS_PRELOAD,
     payload: {
-      isPreLoad,
+      isPreload,
     },
   };
 }
@@ -27,6 +27,7 @@ function asyncPreloadProcess() {
       const authUser = await api.getOwnProfile();
 
       dispatch(setAuthUserActionCreator(authUser));
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       // Fallback Process
       dispatch(setAuthUserActionCreator(null));

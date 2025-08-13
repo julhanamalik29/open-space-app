@@ -1,17 +1,17 @@
 /* eslint-disable indent */
 /**
- * @TODO: Define reducer for the isPreLoad state
+ * @TODO: Define reducer for the isPreload state
  */
 
 import { ActionType } from './action';
 
-function isPreLoadReducer(isPreload = true, action = {}) {
+function isPreloadReducer(isPreload = true, action = {}) {
   switch (action.type) {
     case ActionType.SET_IS_PRELOAD:
-      return action.payload.isPreLoad;
+      return action.payload.isPreload;
     default:
       return isPreload;
   }
 }
 
-export default isPreLoadReducer;
+export default isPreloadReducer;
