@@ -2,6 +2,7 @@
  * @TODO: Define all the actions (creator) for the users state
  */
 
+import { hideLoading, showLoading } from '@dimasmds/react-redux-loading-bar';
 import api from '../../utils/api';
 
 const ActionType = {
@@ -20,12 +21,16 @@ function receiveUsersActionCreator(users) {
 // Function Thunks
 
 function asyncRegisterUser({ id, name, password }) {
-  return async () => {
+  return async (dispatch) => {
+    dispatch(showLoading());
+
     try {
       await api.register({ id, name, password });
     } catch (error) {
       alert(error.message);
     }
+
+    dispatch(hideLoading());
   };
 }
 

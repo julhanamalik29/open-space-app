@@ -5,13 +5,18 @@ import App from './App';
 
 import './styles/style.css';
 
+import { Provider } from 'react-redux';
+import store from './states/index';
+
 const root = createRoot(document.getElementById('root'));
 
 // TODO: wrap App with store provider
 root.render(
-  <BrowserRouter>
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </BrowserRouter>
+  </Provider>
 );

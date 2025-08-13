@@ -2,12 +2,13 @@
  * @TODO: Create Redux store
  */
 
-const { configureStore } = require('@reduxjs/toolkit');
-const { default: authUserReducer } = require('./authUser/reducer');
-const { default: isPreloadReducer } = require('./isPreload/reducer');
-const { default: usersReducer } = require('./users/reducer');
-const { talksReducer } = require('./talks/reducer');
-const { default: talkDetailReducer } = require('./talkDetail/reducer');
+import { configureStore } from '@reduxjs/toolkit';
+import authUserReducer from './authUser/reducer';
+import isPreloadReducer from './isPreload/reducer';
+import usersReducer from './users/reducer';
+import { talksReducer } from './talks/reducer';
+import talkDetailReducer from './talkDetail/reducer';
+import { loadingBarReducer } from '@dimasmds/react-redux-loading-bar';
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     users: usersReducer,
     talks: talksReducer,
     talkDetail: talkDetailReducer,
+    loadingBar: loadingBarReducer,
   },
 });
 
