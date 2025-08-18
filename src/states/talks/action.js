@@ -8,7 +8,7 @@ import api from '../../utils/api';
 const ActionType = {
   RECEIVE_TALKS: 'RECEIVE_TALKS',
   ADD_TALK: 'ADD_TALK',
-  TOOGLE_LIKE_TALK: 'TOOGLE_LIKE_TALK',
+  TOGGLE_LIKE_TALK: 'TOGGLE_LIKE_TALK',
 };
 
 function receiveTalksActionCreator(talks) {
@@ -31,7 +31,7 @@ function addTalkActionCreator(talk) {
 
 function toggleLikeTalkActionCreator({ talkId, userId }) {
   return {
-    type: ActionType.TOOGLE_LIKE_TALK,
+    type: ActionType.TOGGLE_LIKE_TALK,
     payload: {
       talkId,
       userId,

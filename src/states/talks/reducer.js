@@ -13,7 +13,7 @@ function talksReducer(talks = [], action = {}) {
     case ActionType.ADD_TALK:
       return [action.payload.talk, ...talks];
 
-    case ActionType.TOOGLE_LIKE_TALK:
+    case ActionType.TOGGLE_LIKE_TALK:
       return talks.map((talk) => {
         if (talk.id === action.payload.talkId) {
           return {
